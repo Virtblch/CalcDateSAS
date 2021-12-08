@@ -37,14 +37,19 @@ class SAStoDate : AppCompatActivity() {
                     var formatter = SimpleDateFormat1("yyyy-MM-dd") // modify format
 
 
-                    if (sasDate<0){
+                    if (sasDate<0 && sasDate>=-137697){
                         pMils = -(TimeUnit.DAYS.toMillis(abs(sasDate)) + 315619200000)
+                        tv1.text = formatter.format(Date(pMils))
+                    }
+                    else if (sasDate>=0 && sasDate<=6552450){
+                        pMils= TimeUnit.DAYS.toMillis(sasDate) - 315619200000
+                        tv1.text = formatter.format(Date(pMils))
                     }
                     else{
-                        pMils= TimeUnit.DAYS.toMillis(sasDate) - 315619200000
+                        tv1.text = "out of range"
                     }
                     //var formatter = SimpleDateFormat1("yyyy-MM-dd HH:mm:ss") // modify format
-                    tv1.text = formatter.format(Date(pMils))
+
                 } catch (e: Exception) {tv1.text=""}
             }
         })

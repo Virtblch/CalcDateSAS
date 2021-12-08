@@ -14,19 +14,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter time (Hour:Min:Sec)"
+        app:layout_constraintTop_toBottomOf="@+id/dtp1"
+        android:textSize="20sp"/>
+
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/dtp1"
+        app:layout_constraintTop_toBottomOf="@+id/lbl"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Время (Час:Мин:Сек)"
-            android:textSize="20sp"/>
+
 
         <EditText
             android:id="@+id/ethh"

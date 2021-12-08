@@ -11,6 +11,7 @@ import android.widget.TimePicker.OnTimeChangedListener
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.math.round
 
 class TimeToSAS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +19,20 @@ class TimeToSAS : AppCompatActivity() {
         setContentView(R.layout.activity_time_to_sas)
 
         val datePicker = findViewById<DatePicker>(R.id.dtp1)
+        val lbl: TextView = findViewById(R.id.lbl)
         val tv1: TextView = findViewById(R.id.tv1)
         val ethh: TextView = findViewById(R.id.ethh)
         val etmm: TextView = findViewById(R.id.etmm)
         val etss: TextView = findViewById(R.id.etss)
 
+        val tz = TimeZone.getDefault().id
+
+        lbl.text="Enter $tz time (Hour:Min:Sec):"
+
         val today = Calendar.getInstance()
         today.set(today.get(Calendar.YEAR), today.get(Calendar.MONTH), today.get(Calendar.DAY_OF_MONTH), 0, 0, 0)
+        today.timeInMillis= ((today.timeInMillis/1000)*1000)
+        tv1.text=(round((today.timeInMillis+315619200000).toDouble() / 1000)).toInt().toString()
         val hh1 = Calendar.getInstance()
         hh1.timeInMillis=0
         val mm1 = Calendar.getInstance()
@@ -33,6 +41,8 @@ class TimeToSAS : AppCompatActivity() {
         ss1.timeInMillis=0
         val time1 = Calendar.getInstance()
         val calendar = Calendar.getInstance()
+        calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), 0, 0)
+        calendar.timeInMillis= ((calendar.timeInMillis/1000)*1000)
         datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH), today.get(Calendar.DAY_OF_MONTH))
         { view, year, month, day ->
             val month = month + 1
@@ -41,15 +51,17 @@ class TimeToSAS : AppCompatActivity() {
 
 
             calendar.set(year, month-1, day, 0, 0, 0)
+            calendar.timeInMillis= ((calendar.timeInMillis/1000)*1000)
             today.set(year, month-1, day, 0, 0, 0)
-
+            today.timeInMillis= ((today.timeInMillis/1000)*1000)
             val calendarStart = Calendar.getInstance()
             calendarStart.timeInMillis = -315619200000
 
 
             val difference = calendar.timeInMillis - calendarStart.timeInMillis
             //val days = difference / (24 * 60 * 60 * 1000)
-            tv1.text=((difference + ss1.timeInMillis + mm1.timeInMillis + hh1.timeInMillis)/1000).toString()
+            //tv1.text=((difference + ss1.timeInMillis + mm1.timeInMillis + hh1.timeInMillis)/1000).toString()
+            tv1.text=(round((difference + ss1.timeInMillis + mm1.timeInMillis + hh1.timeInMillis).toDouble() / 1000)).toInt().toString()
             //tv1.text=msg
             //tv1.text=calendar.time.toString()
 
@@ -75,10 +87,11 @@ class TimeToSAS : AppCompatActivity() {
                     pMils= TimeUnit.HOURS.toMillis(hh)
                     hh1.timeInMillis=pMils
                     time1.timeInMillis=today.timeInMillis + pMils + 315619200000 + mm1.timeInMillis + ss1.timeInMillis
-                    tv1.text=(time1.timeInMillis/1000).toString()
+                    //tv1.text=(time1.timeInMillis/1000).toString()
+                    tv1.text=(round((time1.timeInMillis).toDouble() / 1000)).toInt().toString()
                     //tv1.text=today.timeInMillis.toString()
-
-                } catch (e: Exception) {tv1.text=((today.timeInMillis + 315619200000 + mm1.timeInMillis + ss1.timeInMillis)/1000).toString(); hh1.timeInMillis=0}
+                //} catch (e: Exception) {tv1.text=((today.timeInMillis + 315619200000 + mm1.timeInMillis + ss1.timeInMillis)/1000).toString(); hh1.timeInMillis=0}
+                } catch (e: Exception) {tv1.text=(round((today.timeInMillis + 315619200000 + mm1.timeInMillis + ss1.timeInMillis).toDouble() / 1000)).toInt().toString(); hh1.timeInMillis=0}
             }
         })
 
@@ -99,10 +112,11 @@ class TimeToSAS : AppCompatActivity() {
                     pMils= TimeUnit.MINUTES.toMillis(mm)
                     mm1.timeInMillis=pMils
                     time1.timeInMillis=today.timeInMillis + pMils + 315619200000 + hh1.timeInMillis + ss1.timeInMillis
-                    tv1.text=(time1.timeInMillis/1000).toString()
+                    //tv1.text=(time1.timeInMillis/1000).toString()
+                    tv1.text=(round((time1.timeInMillis).toDouble() / 1000)).toInt().toString()
                     //tv1.text=today.timeInMillis.toString()
 
-                } catch (e: Exception) {tv1.text=((today.timeInMillis + 315619200000 + hh1.timeInMillis + ss1.timeInMillis)/1000).toString(); mm1.timeInMillis=0}
+                } catch (e: Exception) {tv1.text=(round((today.timeInMillis + 315619200000 + hh1.timeInMillis + ss1.timeInMillis).toDouble() / 1000)).toInt().toString(); mm1.timeInMillis=0}
             }
         })
 
@@ -123,10 +137,11 @@ class TimeToSAS : AppCompatActivity() {
                     pMils= TimeUnit.SECONDS.toMillis(ss)
                     ss1.timeInMillis=pMils
                     time1.timeInMillis=today.timeInMillis + pMils + 315619200000 + mm1.timeInMillis + hh1.timeInMillis
-                    tv1.text=(time1.timeInMillis/1000).toString()
+                    //tv1.text=(time1.timeInMillis/1000).toString()
+                    tv1.text=(round((time1.timeInMillis).toDouble() / 1000)).toInt().toString()
                     //tv1.text=today.timeInMillis.toString()
 
-                } catch (e: Exception) {tv1.text=((today.timeInMillis + 315619200000 + mm1.timeInMillis + hh1.timeInMillis)/1000).toString(); ss1.timeInMillis=0}
+                } catch (e: Exception) {tv1.text=(round((today.timeInMillis + 315619200000 + mm1.timeInMillis + hh1.timeInMillis).toDouble() / 1000)).toInt().toString(); ss1.timeInMillis=0}
             }
         })
 

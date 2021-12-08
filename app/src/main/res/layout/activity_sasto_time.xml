@@ -6,19 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".SAStoTime">
 
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/ll1">
 
         <TextView
+            android:id="@+id/lbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Date and Time:"
+            app:layout_constraintTop_toBottomOf="@+id/ll1"
+            android:layout_margin="5dp"
             />
 
         <TextView
@@ -26,10 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/ll1"
+            app:layout_constraintTop_toBottomOf="@+id/lbl"
+            android:layout_margin="5dp"
             />
 
-    </LinearLayout>
+
 
 
 
@@ -46,6 +43,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Enter SAS DateTime:"
+
             />
 
         <EditText
@@ -54,7 +52,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:inputType="numberSigned"
-            android:maxLength="15"
+            android:maxLength="12"
             android:textSize="20sp"
             />
 

@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:inputType="numberSigned"
-            android:maxLength="15"
+            android:maxLength="7"
             android:textSize="20sp"
             />
 

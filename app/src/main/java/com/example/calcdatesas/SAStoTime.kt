@@ -17,8 +17,11 @@ class SAStoTime : AppCompatActivity() {
 
 
         val tv1: TextView = findViewById(R.id.tv1)
+        val lbl: TextView = findViewById(R.id.lbl)
         val edt1: EditText = findViewById(R.id.edt1)
 
+        val tz = TimeZone.getDefault().id
+        lbl.text="Date and Time $tz:"
 
         edt1.addTextChangedListener(object : TextWatcher {
 
@@ -36,14 +39,19 @@ class SAStoTime : AppCompatActivity() {
                     var formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss") // modify format
 
 
-                    if (sasDate<0){
+                    if (sasDate<0 && sasDate>=-11897020800){
                         pMils = -(TimeUnit.SECONDS.toMillis(Math.abs(sasDate)) + 315619200000)
+                        tv1.text = formatter.format(Date(pMils))
+                    }
+                    else if(sasDate>=0 && sasDate<=566131680000){
+                        pMils= TimeUnit.SECONDS.toMillis(sasDate) - 315619200000
+                        tv1.text = formatter.format(Date(pMils))
                     }
                     else{
-                        pMils= TimeUnit.SECONDS.toMillis(sasDate) - 315619200000
+                        tv1.text = "out of range"
                     }
                     //var formatter = SimpleDateFormat1("yyyy-MM-dd HH:mm:ss") // modify format
-                    tv1.text = formatter.format(Date(pMils))
+
                 } catch (e: Exception) {tv1.text=""}
             }
         })
