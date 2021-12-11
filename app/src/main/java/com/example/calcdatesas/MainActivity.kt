@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val button3: Button =findViewById(R.id.bt3)
+ /*       val button3: Button =findViewById(R.id.bt3)
         button3.setOnClickListener {
             intent = Intent(this, DateToSAS::class.java)
             startActivity(intent)
-        }
+        }*/
 
         val button4: Button =findViewById(R.id.bt4)
         button4.setOnClickListener {
