@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <Button
-        android:id="@+id/bt1"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SAS Date --> Date"
-        android:textSize="20dp"
-        />
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toTopOf="parent">
+
     <Button
         android:id="@+id/bt2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SAS DateTime --> Time"
+        android:text="SAS DateTime --> Date/Time"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/bt1"
         />
 
     <Button
@@ -27,8 +26,9 @@
         android:layout_height="wrap_content"
         android:text="Date/Time --> SAS DateTime"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/bt2"
         />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     <ImageView
         android:id="@+id/imageView2"
