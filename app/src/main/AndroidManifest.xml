@@ -13,13 +13,7 @@
             android:name=".TimeToSAS"
             android:exported="false" />
         <activity
-            android:name=".DateToSAS"
-            android:exported="false" />
-        <activity
             android:name=".SAStoTime"
-            android:exported="false" />
-        <activity
-            android:name=".SAStoDate"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

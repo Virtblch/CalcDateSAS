@@ -20,14 +20,15 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/date_time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             />
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -44,10 +45,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:text="Enter SAS DateTime:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
 
-            />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/edt1"
@@ -75,6 +76,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Date: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             />
 
         <TextView
@@ -82,11 +84,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             />
 
     </LinearLayout>
 
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/sep"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    app:layout_constraintTop_toBottomOf="@+id/llCalcDT">
 
+    <View android:id="@+id/separator"
+        android:background="#1A6CAE"
+        android:layout_width = "fill_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical ="true"
+        android:layout_alignParentTop="true"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
 
     <LinearLayout
         android:id="@+id/llEnterD"
@@ -94,14 +113,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/llCalcDT">
+        app:layout_constraintTop_toBottomOf="@+id/sep">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Enter SAS Date:         "
-
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             />
 
         <EditText
@@ -115,5 +134,23 @@
             />
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/sep2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/llCalcD">
+
+        <View android:id="@+id/separator2"
+            android:background="#1A6CAE"
+            android:layout_width = "fill_parent"
+            android:layout_height="2dp"
+            android:layout_centerVertical ="true"
+            android:layout_alignParentTop="true"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

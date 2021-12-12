@@ -14,6 +14,9 @@ import android.widget.AdapterView
 import android.view.View
 
 
+
+
+
 class TimeToSAS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +57,7 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
+                (sphh.getSelectedView() as TextView).setTextSize(20F)
                 hh = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
@@ -66,6 +70,7 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
+                (spmm.getSelectedView() as TextView).setTextSize(20F)
                 mm = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
@@ -78,6 +83,7 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
+                (spss.getSelectedView() as TextView).setTextSize(20F)
                 ss = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }

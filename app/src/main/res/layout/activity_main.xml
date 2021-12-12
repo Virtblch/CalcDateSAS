@@ -14,19 +14,15 @@
 
     <Button
         android:id="@+id/bt2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/mButtonStyle"
         android:text="SAS DateTime --> Date/Time"
-        android:textSize="20dp"
         />
 
-    <Button
-        android:id="@+id/bt4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date/Time --> SAS DateTime"
-        android:textSize="20dp"
-        />
+        <Button
+            android:id="@+id/bt4"
+            style="@style/mButtonStyle"
+            android:text="Date/Time --> SAS DateTime"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
