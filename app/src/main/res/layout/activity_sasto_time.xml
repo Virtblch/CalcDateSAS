@@ -54,11 +54,11 @@
             android:id="@+id/edt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
             android:inputType="numberSigned"
             android:maxLength="12"
             android:textSize="20sp"
-            />
+            android:backgroundTint="#888888"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -129,8 +129,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:inputType="numberSigned"
-            android:maxLength="12"
+            android:maxLength="7"
             android:textSize="20sp"
+            android:backgroundTint="#888888"
             />
 
     </LinearLayout>

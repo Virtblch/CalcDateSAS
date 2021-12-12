@@ -65,18 +65,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/strHH"
+            android:backgroundTint="#888888"
             />
         <Spinner
             android:id="@+id/spmm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/strMM"
+            android:backgroundTint="#888888"
             />
         <Spinner
             android:id="@+id/spss"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/strSS"
+            android:backgroundTint="#888888"
             />
 
 
