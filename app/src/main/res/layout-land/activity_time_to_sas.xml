@@ -11,36 +11,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <DatePicker
             android:id="@+id/dtp1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:text="SAS Date: "
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp" />
 
             <TextView
 
-                android:layout_marginBottom="25dp"
                 android:id="@+id/tvdt1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="20sp" />
 
@@ -54,57 +56,57 @@
 
             <TextView
                 android:id="@+id/tv1"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="20sp" />
 
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/ll1"
         app:layout_constraintTop_toBottomOf="@+id/ll1">
+
         <TextView
-            android:layout_margin="5dp"
             android:id="@+id/lbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Enter time:"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
+
         <Spinner
-            android:layout_margin="5dp"
             android:id="@+id/sphh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strHH"
-            android:backgroundTint="#888888"
-            />
-        <Spinner
             android:layout_margin="5dp"
+            android:backgroundTint="#888888"
+            android:entries="@array/strHH" />
+
+        <Spinner
             android:id="@+id/spmm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strMM"
-            android:backgroundTint="#888888"
-            />
-        <Spinner
             android:layout_margin="5dp"
+            android:backgroundTint="#888888"
+            android:entries="@array/strMM" />
+
+        <Spinner
             android:id="@+id/spss"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strSS"
+            android:layout_margin="5dp"
             android:backgroundTint="#888888"
-            />
+            android:entries="@array/strSS" />
     </LinearLayout>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

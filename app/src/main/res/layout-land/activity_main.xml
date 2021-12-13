@@ -26,12 +26,19 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/calc_sas"
-        />
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/bt3"
+            style="@style/mButtonStyle"
+            android:text="About SAS Date..."
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
