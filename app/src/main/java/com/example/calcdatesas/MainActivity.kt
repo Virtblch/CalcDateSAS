@@ -1,6 +1,7 @@
 package com.example.calcdatesas
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -19,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         val button4: Button =findViewById(R.id.bt4)
         button4.setOnClickListener {
             intent = Intent(this, TimeToSAS::class.java)
+            startActivity(intent)
+        }
+
+        val button3:Button=findViewById(R.id.bt3)
+        val url= Uri.parse("https://v8doc.sas.com/sashtml/lrcon/zenid-63.htm")
+        button3.setOnClickListener {
+            intent = Intent(Intent.ACTION_VIEW, url)
             startActivity(intent)
         }
     }

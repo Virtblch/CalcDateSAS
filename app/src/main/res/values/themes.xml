@@ -6,9 +6,9 @@
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#1A6CAE</item>
-        <item name="colorSecondaryVariant">#2196F3</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#103C5E</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -16,7 +16,7 @@
     <style name="mButtonStyle" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">70dp</item>
-        <item name="android:backgroundTint">#1A6CAE</item>
+        <item name="android:backgroundTint">#103C5E</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20dp</item>
         <item name="cornerRadius">0dp</item>
@@ -26,7 +26,7 @@
     <style name="mTextStyle" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">70dp</item>
-        <item name="android:backgroundTint">#1A6CAE</item>
+        <item name="android:backgroundTint">#103C5E</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20dp</item>
         <item name="cornerRadius">0dp</item>

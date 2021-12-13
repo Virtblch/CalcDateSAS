@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.CalcDateSAS" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#103C5E</item>
+        <item name="colorPrimary">#1A5B8B</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#1A6CAE</item>
-        <item name="colorSecondaryVariant">#2196F3</item>
+        <item name="colorSecondary">#1A5B8B </item>
+        <item name="colorSecondaryVariant">@color/black</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
