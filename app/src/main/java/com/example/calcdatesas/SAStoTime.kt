@@ -38,13 +38,19 @@ class SAStoTime : AppCompatActivity() {
                     val i: Instant = Instant.ofEpochMilli(sasDate*1000 - 315619200000)
                     val aDateTime: ZonedDateTime = ZonedDateTime.ofInstant(i, utc0Zone)
 
-                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss z")
+                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss z")
                     val formattedString: String = aDateTime.format(formatter)
                     if (sasDate>=-11928470400 && sasDate<=566131766399) {
-                        tv1.text = formattedString
+                        tv1.text = formattedString.replace("+","")
                     }
                     else{
-                        tv1.text = "SAS DateTime out of range"
+                        var edtStr: String=(edt1.text).toString()
+                        if (edtStr != null || edtStr.length != 0) {
+                            edtStr=edtStr.substring(0, edtStr.length -1);
+                            edt1.setText(edtStr, TextView.BufferType.EDITABLE);
+                            edt1.setSelection(edt1.getText().length);
+                        }
+
                     }
                 } catch (e: Exception) {tv1.text=""}
             }
@@ -66,13 +72,18 @@ class SAStoTime : AppCompatActivity() {
                     val i: Instant = Instant.ofEpochMilli(sasDate*1000 - 315619200000)
                     val aDateTime: ZonedDateTime = ZonedDateTime.ofInstant(i, utc0Zone)
 
-                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
+                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy")
                     val formattedString: String = aDateTime.format(formatter)
                     if (sasDate>=-11928470400 && sasDate<=566131766399) {
-                        tvD.text = formattedString
+                        tvD.text = formattedString.replace("+","")
                     }
                     else{
-                        tvD.text = "SAS Date out of range"
+                        var edtStr: String=(edtD.text).toString()
+                        if (edtStr != null || edtStr.length != 0) {
+                            edtStr = edtStr.substring(0, edtStr.length - 1);
+                            edtD.setText(edtStr, TextView.BufferType.EDITABLE);
+                            edtD.setSelection(edtD.getText().length);
+                        }
                     }
                 } catch (e: Exception) {tvD.text=""}
             }
