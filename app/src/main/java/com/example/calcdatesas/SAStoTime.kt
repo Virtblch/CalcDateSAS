@@ -34,21 +34,21 @@ class SAStoTime : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 try {
-                    var sasDate: Long = s.toString().toLong()
+                    val sasDate: Long = s.toString().toLong()
                     val i: Instant = Instant.ofEpochMilli(sasDate*1000 - 315619200000)
                     val aDateTime: ZonedDateTime = ZonedDateTime.ofInstant(i, utc0Zone)
 
-                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss z")
+                    val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss z")
                     val formattedString: String = aDateTime.format(formatter)
                     if (sasDate>=-11928470400 && sasDate<=566131766399) {
                         tv1.text = formattedString.replace("+","")
                     }
                     else{
                         var edtStr: String=(edt1.text).toString()
-                        if (edtStr != null || edtStr.length != 0) {
-                            edtStr=edtStr.substring(0, edtStr.length -1);
-                            edt1.setText(edtStr, TextView.BufferType.EDITABLE);
-                            edt1.setSelection(edt1.getText().length);
+                        if (edtStr.isNotEmpty()) {
+                            edtStr=edtStr.substring(0, edtStr.length -1)
+                            edt1.setText(edtStr, TextView.BufferType.EDITABLE)
+                            edt1.setSelection(edt1.text.length)
                         }
 
                     }
@@ -68,21 +68,21 @@ class SAStoTime : AppCompatActivity() {
                                        before: Int, count: Int) {
                 try {
                     var sasDate: Long = s.toString().toLong()
-                    sasDate=sasDate*24*60*60
+                    sasDate *= 24 * 60 * 60
                     val i: Instant = Instant.ofEpochMilli(sasDate*1000 - 315619200000)
                     val aDateTime: ZonedDateTime = ZonedDateTime.ofInstant(i, utc0Zone)
 
-                    var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy")
+                    val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy")
                     val formattedString: String = aDateTime.format(formatter)
                     if (sasDate>=-11928470400 && sasDate<=566131766399) {
                         tvD.text = formattedString.replace("+","")
                     }
                     else{
                         var edtStr: String=(edtD.text).toString()
-                        if (edtStr != null || edtStr.length != 0) {
-                            edtStr = edtStr.substring(0, edtStr.length - 1);
-                            edtD.setText(edtStr, TextView.BufferType.EDITABLE);
-                            edtD.setSelection(edtD.getText().length);
+                        if (edtStr.isNotEmpty()) {
+                            edtStr = edtStr.substring(0, edtStr.length - 1)
+                            edtD.setText(edtStr, TextView.BufferType.EDITABLE)
+                            edtD.setSelection(edtD.text.length)
                         }
                     }
                 } catch (e: Exception) {tvD.text=""}

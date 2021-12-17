@@ -15,13 +15,13 @@
         <Button
             android:id="@+id/bt2"
             style="@style/mButtonStyle"
-            android:text="SAS DateTime --> Date/Time"
+            android:text="@string/sas_datetime_date_time"
             />
 
         <Button
             android:id="@+id/bt4"
             style="@style/mButtonStyle"
-            android:text="Date/Time --> SAS DateTime"
+            android:text="@string/date_time_sas_datetime"
             />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -36,7 +36,7 @@
         <Button
             android:id="@+id/bt3"
             style="@style/mButtonStyle"
-            android:text="About SAS Date..."
+            android:text="@string/about_sas_date"
             />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

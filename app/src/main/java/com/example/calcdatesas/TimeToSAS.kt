@@ -32,8 +32,8 @@ class TimeToSAS : AppCompatActivity() {
         sphh= findViewById(R.id.sphh)
         spmm= findViewById(R.id.spmm)
         spss= findViewById(R.id.spss)
-        datePicker.setMinDate(864000000L-12244089600000L)
-        datePicker.setMaxDate(565816147198999L-86400000L)
+        datePicker.minDate = 864000000L-12244089600000L
+        datePicker.maxDate = 565816147198999L-86400000L
         val utc0Zone = ZoneId.of("UTC+0")
         val startSasDateTime: ZonedDateTime = ZonedDateTime.of(1960, 1, 1, 0, 0, 0, 0, utc0Zone)
         var ss: Long=0
@@ -48,64 +48,64 @@ class TimeToSAS : AppCompatActivity() {
 
         datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
         { _, year, month, day ->
-            val month = month + 1
+            /*val month = month + 1*/
 
-            val aDateTime: ZonedDateTime = ZonedDateTime.of(year, month, day, 0, 0, 0, 0, utc0Zone)
-            sasDT= ChronoUnit.SECONDS.between(startSasDateTime, aDateTime)
+            /*val aDateTime: ZonedDateTime = ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone)*/
+            sasDT= ChronoUnit.SECONDS.between(startSasDateTime, ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone))
             tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh)+ TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             tvdt1.text=(sasDT!! / 24 / 60 / 60).toString()
         }
 
-        sphh.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+        sphh.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (sphh.getSelectedView() != null) {
-                    (sphh.getSelectedView() as TextView).setTextSize(20F)
+                if (sphh.selectedView != null) {
+                    (sphh.selectedView as TextView).textSize = 20F
                 }
                 hh = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
+        }
 
-        spmm.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+        spmm.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (spmm.getSelectedView() != null) {
-                    (spmm.getSelectedView() as TextView).setTextSize(20F)
+                if (spmm.selectedView != null) {
+                    (spmm.selectedView as TextView).textSize = 20F
                 }
                 mm = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
+        }
 
-        spss.setOnItemSelectedListener(object : AdapterView.OnItemSelectedListener {
+        spss.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (spss.getSelectedView() != null) {
-                    (spss.getSelectedView() as TextView).setTextSize(20F)
+                if (spss.selectedView != null) {
+                    (spss.selectedView as TextView).textSize = 20F
                 }
                 ss = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
+        }
 
     }
 
     // сохранение состояния
     override fun onSaveInstanceState(outState: Bundle) {
-        tvdt1 = findViewById<TextView>(R.id.tvdt1)
+        tvdt1 = findViewById(R.id.tvdt1)
         name = tvdt1.text.toString()
         nameVariableKey="tvdt1"
         outState.putString(nameVariableKey, name)
@@ -120,22 +120,22 @@ class TimeToSAS : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         nameVariableKey="tvdt1"
         name = savedInstanceState.getString(nameVariableKey)
-        tvdt1?.setText(name)
+        tvdt1.text = name
         nameVariableKey="sasDT"
         name = savedInstanceState.getString(nameVariableKey)
         sasDT= name?.toLong()
 
         if (sphh.selectedItemPosition==0) {
             sphh.setSelection(0, true)
-            val vh: View = sphh.getSelectedView(); (vh as TextView).setTextSize(20F)
+            val vh: View = sphh.selectedView; (vh as TextView).textSize = 20F
         }
         if (spmm.selectedItemPosition==0) {
             spmm.setSelection(0, true)
-            val vm: View = spmm.getSelectedView(); (vm as TextView).setTextSize(20F)
+            val vm: View = spmm.selectedView; (vm as TextView).textSize = 20F
         }
         if (spss.selectedItemPosition==0) {
             spss.setSelection(0, true)
-            val vs: View = spss.getSelectedView(); (vs as TextView).setTextSize(20F)
+            val vs: View = spss.selectedView; (vs as TextView).textSize = 20F
         }
     }
 }

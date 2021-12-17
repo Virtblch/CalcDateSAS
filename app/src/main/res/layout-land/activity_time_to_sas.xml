@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="SAS Date: "
+                android:text="@string/sas_date"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp" />
 
@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SAS DateTime: "
+                android:text="@string/sas_datetime"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="20sp" />
 
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Enter time:"
+            android:text="@string/enter_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
 

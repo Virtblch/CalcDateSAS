@@ -26,11 +26,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SAS Date: "
+            android:text="@string/sas_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
 
         <TextView
+            android:layout_marginStart="5dp"
             android:id="@+id/tvdt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +58,7 @@
             android:id="@+id/lbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter time:"
+            android:text="@string/enter_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
         <Spinner
@@ -100,11 +101,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SAS DateTime: "
+            android:text="@string/sas_datetime"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
 
         <TextView
+            android:layout_marginStart="5dp"
             android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
