@@ -13,6 +13,10 @@ import java.util.concurrent.TimeUnit
 import android.widget.AdapterView
 import android.view.View
 
+
+
+
+
 class TimeToSAS : AppCompatActivity() {
     private var name: String? = "undefined"
     private var nameVariableKey = "NAME_VARIABLE"
@@ -25,6 +29,7 @@ class TimeToSAS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_to_sas)
+        Locale.setDefault(Locale.ENGLISH)
 
         val datePicker = findViewById<DatePicker>(R.id.dtp1)
         val tv1: TextView = findViewById(R.id.tv1)
@@ -49,7 +54,6 @@ class TimeToSAS : AppCompatActivity() {
         datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
         { _, year, month, day ->
             /*val month = month + 1*/
-
             /*val aDateTime: ZonedDateTime = ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone)*/
             sasDT= ChronoUnit.SECONDS.between(startSasDateTime, ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone))
             tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh)+ TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
@@ -61,9 +65,9 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (sphh.selectedView != null) {
-                    (sphh.selectedView as TextView).textSize = 20F
-                }
+ //               if (sphh.selectedView != null) {
+ //                   (sphh.selectedView as TextView).textSize = 20F
+ //               }
                 hh = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
@@ -76,9 +80,9 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (spmm.selectedView != null) {
-                    (spmm.selectedView as TextView).textSize = 20F
-                }
+ //               if (spmm.selectedView != null) {
+ //                   (spmm.selectedView as TextView).textSize = 20F
+ //               }
                 mm = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
@@ -91,15 +95,21 @@ class TimeToSAS : AppCompatActivity() {
                 parent: AdapterView<*>?,
                 itemSelected: View?, selectedItemPosition: Int, selectedId: Long
             ) {
-                if (spss.selectedView != null) {
-                    (spss.selectedView as TextView).textSize = 20F
-                }
+//                if (spss.selectedView != null) {
+//                    (spss.selectedView as TextView).textSize = 20F
+//                }
                 ss = selectedItemPosition.toString().toLong()
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+        val tz = TimeZone.getDefault()
+        calendar.time = Date()
+        calendar.add(Calendar.MILLISECOND, -(tz.getOffset(calendar.timeInMillis)))
+        sphh.setSelection(calendar.get(Calendar.HOUR_OF_DAY), true)
+        spmm.setSelection(calendar.get(Calendar.MINUTE), true)
+        spss.setSelection(calendar.get(Calendar.SECOND), true)
 
     }
 
@@ -125,7 +135,7 @@ class TimeToSAS : AppCompatActivity() {
         name = savedInstanceState.getString(nameVariableKey)
         sasDT= name?.toLong()
 
-        if (sphh.selectedItemPosition==0) {
+/*        if (sphh.selectedItemPosition==0) {
             sphh.setSelection(0, true)
             val vh: View = sphh.selectedView; (vh as TextView).textSize = 20F
         }
@@ -137,5 +147,9 @@ class TimeToSAS : AppCompatActivity() {
             spss.setSelection(0, true)
             val vs: View = spss.selectedView; (vs as TextView).textSize = 20F
         }
+ */
+        sphh.setSelection(sphh.selectedItemPosition, true)
+        spmm.setSelection(spmm.selectedItemPosition, true)
+        spss.setSelection(spss.selectedItemPosition, true)
     }
 }

@@ -10,13 +10,14 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class SAStoTime : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sasto_time)
 
-
+        Locale.setDefault(Locale.ENGLISH)
         val tv1: TextView = findViewById(R.id.tv1)
         val edt1: EditText = findViewById(R.id.edt1)
         val tvD: TextView = findViewById(R.id.tvD)

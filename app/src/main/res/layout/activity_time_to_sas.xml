@@ -8,20 +8,24 @@
 
     <DatePicker
         android:id="@+id/dtp1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/lldt1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/dtp1">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sep">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,72 +35,88 @@
             android:textSize="20sp" />
 
         <TextView
-            android:layout_marginStart="5dp"
             android:id="@+id/tvdt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
 
     </LinearLayout>
 
 
-
     <LinearLayout
         android:id="@+id/ll1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="25dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/lldt1"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/dtp1">
 
         <TextView
             android:id="@+id/lbl"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:text="@string/enter_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
         <Spinner
             android:id="@+id/sphh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strHH"
             android:backgroundTint="#888888"
-            />
+            android:entries="@array/strHH" />
+
         <Spinner
             android:id="@+id/spmm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strMM"
             android:backgroundTint="#888888"
-            />
+            android:entries="@array/strMM" />
+
         <Spinner
             android:id="@+id/spss"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strSS"
             android:backgroundTint="#888888"
-            />
-
-
-
-
+            android:entries="@array/strSS" />
     </LinearLayout>
 
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/sep"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll1">
 
+        <View
+            android:id="@+id/separator"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#103C5E" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/lldt2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/ll1">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lldt1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,16 +126,33 @@
             android:textSize="20sp" />
 
         <TextView
-            android:layout_marginStart="5dp"
             android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
 
     </LinearLayout>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/sep2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lldt2">
 
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#103C5E" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

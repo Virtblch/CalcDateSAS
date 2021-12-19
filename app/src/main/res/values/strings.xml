@@ -6,7 +6,7 @@
     <string name="enter_sas_date">Enter SAS Date:</string>
     <string name="sas_date">SAS Date:</string>
     <string name="sas_datetime">SAS DateTime:</string>
-    <string name="enter_time">Enter time:</string>
+    <string name="enter_time">Time UTC:</string>
     <string name="sas_datetime_date_time"><![CDATA[SAS DateTime —> Date/Time]]></string>
     <string name="date_time_sas_datetime"><![CDATA[Date/Time —> SAS DateTime]]></string>
     <string name="about_sas_date">About SAS Date…</string>

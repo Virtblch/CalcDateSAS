@@ -25,6 +25,7 @@
 
         <TextView
             android:id="@+id/tv1"
+            android:textAllCaps="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -82,8 +83,9 @@
             />
 
         <TextView
-            android:layout_marginStart="5dp"
             android:id="@+id/tvD"
+            android:textAllCaps="true"
+            android:layout_marginStart="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"

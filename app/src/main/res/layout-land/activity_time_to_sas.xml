@@ -71,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         app:layout_constraintStart_toStartOf="@+id/ll1"
         app:layout_constraintTop_toBottomOf="@+id/ll1">
 
@@ -78,16 +79,14 @@
             android:id="@+id/lbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:text="@string/enter_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/sphh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:backgroundTint="#888888"
             android:entries="@array/strHH" />
 
@@ -95,7 +94,6 @@
             android:id="@+id/spmm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:backgroundTint="#888888"
             android:entries="@array/strMM" />
 
@@ -103,7 +101,6 @@
             android:id="@+id/spss"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:backgroundTint="#888888"
             android:entries="@array/strSS" />
     </LinearLayout>
