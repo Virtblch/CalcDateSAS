@@ -1,0 +1,167 @@
+<resources>
+    <string name="app_name">CalcDateSAS</string>
+    <string name="date_time"><![CDATA["Дата/Время: "]]></string>
+    <string name="enter_sas_datetime">Ввод SAS DateTime:</string>
+    <string name="date">Дата:</string>
+    <string name="enter_sas_date">Ввод SAS Date:</string>
+    <string name="sas_date">SAS Date:</string>
+    <string name="sas_datetime">SAS DateTime:</string>
+    <string name="enter_time">Время UTC:</string>
+    <string name="sas_datetime_date_time"><![CDATA[SAS DateTime —> Дата/Время]]></string>
+    <string name="date_time_sas_datetime"><![CDATA[Дата/Время —> SAS DateTime]]></string>
+    <string name="about_sas_date">О SAS Date…</string>
+    <string-array name="strHH">
+        <item>00ч</item>
+        <item>01ч</item>
+        <item>02ч</item>
+        <item>03ч</item>
+        <item>04ч</item>
+        <item>05ч</item>
+        <item>06ч</item>
+        <item>07ч</item>
+        <item>08ч</item>
+        <item>09ч</item>
+        <item>10ч</item>
+        <item>11ч</item>
+        <item>12ч</item>
+        <item>13ч</item>
+        <item>14ч</item>
+        <item>15ч</item>
+        <item>16ч</item>
+        <item>17ч</item>
+        <item>18ч</item>
+        <item>19ч</item>
+        <item>20ч</item>
+        <item>21ч</item>
+        <item>22ч</item>
+        <item>23ч</item>
+    </string-array>
+
+    <string-array name="strMM">
+        <item>00м</item>
+        <item>01м</item>
+        <item>02м</item>
+        <item>03м</item>
+        <item>04м</item>
+        <item>05м</item>
+        <item>06м</item>
+        <item>07м</item>
+        <item>08м</item>
+        <item>09м</item>
+        <item>10м</item>
+        <item>11м</item>
+        <item>12м</item>
+        <item>13м</item>
+        <item>14м</item>
+        <item>15м</item>
+        <item>16м</item>
+        <item>17м</item>
+        <item>18м</item>
+        <item>19м</item>
+        <item>20м</item>
+        <item>21м</item>
+        <item>22м</item>
+        <item>23м</item>
+        <item>24м</item>
+        <item>25м</item>
+        <item>26м</item>
+        <item>27м</item>
+        <item>28м</item>
+        <item>29м</item>
+        <item>30м</item>
+        <item>31м</item>
+        <item>32м</item>
+        <item>33м</item>
+        <item>34м</item>
+        <item>35м</item>
+        <item>36м</item>
+        <item>37м</item>
+        <item>38м</item>
+        <item>39м</item>
+        <item>40м</item>
+        <item>41м</item>
+        <item>42м</item>
+        <item>43м</item>
+        <item>44м</item>
+        <item>45м</item>
+        <item>46м</item>
+        <item>47м</item>
+        <item>48м</item>
+        <item>49м</item>
+        <item>50м</item>
+        <item>51м</item>
+        <item>52м</item>
+        <item>53м</item>
+        <item>54м</item>
+        <item>55м</item>
+        <item>56м</item>
+        <item>57м</item>
+        <item>58м</item>
+        <item>59м</item>
+    </string-array>
+
+    <string-array name="strSS">
+        <item>00с</item>
+        <item>01с</item>
+        <item>02с</item>
+        <item>03с</item>
+        <item>04с</item>
+        <item>05с</item>
+        <item>06с</item>
+        <item>07с</item>
+        <item>08с</item>
+        <item>09с</item>
+        <item>10с</item>
+        <item>11с</item>
+        <item>12с</item>
+        <item>13с</item>
+        <item>14с</item>
+        <item>15с</item>
+        <item>16с</item>
+        <item>17с</item>
+        <item>18с</item>
+        <item>19с</item>
+        <item>20с</item>
+        <item>21с</item>
+        <item>22с</item>
+        <item>23с</item>
+        <item>24с</item>
+        <item>25с</item>
+        <item>26с</item>
+        <item>27с</item>
+        <item>28с</item>
+        <item>29с</item>
+        <item>30с</item>
+        <item>31с</item>
+        <item>32с</item>
+        <item>33с</item>
+        <item>34с</item>
+        <item>35с</item>
+        <item>36с</item>
+        <item>37с</item>
+        <item>38с</item>
+        <item>39с</item>
+        <item>40с</item>
+        <item>41с</item>
+        <item>42с</item>
+        <item>43с</item>
+        <item>44с</item>
+        <item>45с</item>
+        <item>46с</item>
+        <item>47с</item>
+        <item>48с</item>
+        <item>49с</item>
+        <item>50с</item>
+        <item>51с</item>
+        <item>52с</item>
+        <item>53с</item>
+        <item>54с</item>
+        <item>55с</item>
+        <item>56с</item>
+        <item>57с</item>
+        <item>58с</item>
+        <item>59с</item>
+    </string-array>
+
+
+</resources>

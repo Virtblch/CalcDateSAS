@@ -29,7 +29,6 @@ class TimeToSAS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_to_sas)
-        Locale.setDefault(Locale.ENGLISH)
 
         val datePicker = findViewById<DatePicker>(R.id.dtp1)
         val tv1: TextView = findViewById(R.id.tv1)
@@ -37,29 +36,43 @@ class TimeToSAS : AppCompatActivity() {
         sphh= findViewById(R.id.sphh)
         spmm= findViewById(R.id.spmm)
         spss= findViewById(R.id.spss)
+
+        /*Мин. и макс. значения, доступные в выборе календаря
+        Из документации:
+        SAS can perform calculations on dates ranging from A.D. 1582 to A.D. 19,900 */
         datePicker.minDate = 864000000L-12244089600000L
         datePicker.maxDate = 565816147198999L-86400000L
+
+        /*Все вычисления и вывод в нулевом часовом поясе*/
         val utc0Zone = ZoneId.of("UTC+0")
+
+        /*Нулевая дата SAS*/
         val startSasDateTime: ZonedDateTime = ZonedDateTime.of(1960, 1, 1, 0, 0, 0, 0, utc0Zone)
         var ss: Long=0
         var mm: Long=0
         var hh: Long=0
 
+        /*Текущая дата*/
         val calendar = Calendar.getInstance()
         val aDateTime: ZonedDateTime = ZonedDateTime.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DAY_OF_MONTH), 0, 0, 0, 0, utc0Zone)
+
+        /*Считаем разницу между нулевой датой SAS и текущей датой, преобразовывая милисек. в сек, это собственно и есть Sas DateTime.
+        Ниже переменная sasDT пересчитывается при заполнении выпадающих списков с чч\мм\сс */
         sasDT = ChronoUnit.SECONDS.between(startSasDateTime, aDateTime)
         tv1.text=sasDT.toString()
+        /*Из DateTime считаем SAS Date*/
         tvdt1.text=(sasDT!! / 24 / 60 / 60).toString()
 
+        /*Инициализация и слушатель элемента выбора даты*/
         datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
         { _, year, month, day ->
-            /*val month = month + 1*/
-            /*val aDateTime: ZonedDateTime = ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone)*/
+            /*Считаем новый SAS DateTime (и Date) после выбора новой даты. Учитывается выбор времени в выпадающих списках формы*/
             sasDT= ChronoUnit.SECONDS.between(startSasDateTime, ZonedDateTime.of(year, month+1, day, 0, 0, 0, 0, utc0Zone))
             tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh)+ TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             tvdt1.text=(sasDT!! / 24 / 60 / 60).toString()
         }
 
+        /*Слушатель выпадающего списка с выбором часа*/
         sphh.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -69,12 +82,14 @@ class TimeToSAS : AppCompatActivity() {
  //                   (sphh.selectedView as TextView).textSize = 20F
  //               }
                 hh = selectedItemPosition.toString().toLong()
+                /*Пересчет DATETIME SAS после выбора часа с учетом выбора в остальных выпадающих списках времени*/
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
+        /*Слушатель выпадающего списка с выбором минут*/
         spmm.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -84,12 +99,14 @@ class TimeToSAS : AppCompatActivity() {
  //                   (spmm.selectedView as TextView).textSize = 20F
  //               }
                 mm = selectedItemPosition.toString().toLong()
+                /*Пересчет DATETIME SAS после выбора минут с учетом выбора в остальных выпадающих списках времени*/
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
+        /*Слушатель выпадающего списка с выбором секунд*/
         spss.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -99,14 +116,16 @@ class TimeToSAS : AppCompatActivity() {
 //                    (spss.selectedView as TextView).textSize = 20F
 //                }
                 ss = selectedItemPosition.toString().toLong()
+                /*Пересчет DATETIME SAS после выбора секунд с учетом выбора в остальных выпадающих списках времени*/
                 tv1.text=(sasDT!! + TimeUnit.HOURS.toSeconds(hh) + TimeUnit.MINUTES.toSeconds(mm) + ss).toString()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+        /*Заполнение текущего времени UTC*/
         val tz = TimeZone.getDefault()
         calendar.time = Date()
-        calendar.add(Calendar.MILLISECOND, -(tz.getOffset(calendar.timeInMillis)))
+        calendar.add(Calendar.MILLISECOND, -(tz.getOffset(calendar.timeInMillis)))/*текущее время - часовой пояс*/
         sphh.setSelection(calendar.get(Calendar.HOUR_OF_DAY), true)
         spmm.setSelection(calendar.get(Calendar.MINUTE), true)
         spss.setSelection(calendar.get(Calendar.SECOND), true)
@@ -115,10 +134,12 @@ class TimeToSAS : AppCompatActivity() {
 
     // сохранение состояния
     override fun onSaveInstanceState(outState: Bundle) {
+        /*SAS DATE*/
         tvdt1 = findViewById(R.id.tvdt1)
         name = tvdt1.text.toString()
         nameVariableKey="tvdt1"
         outState.putString(nameVariableKey, name)
+        /*переменная с SAS DATETIME*/
         name = sasDT.toString()
         nameVariableKey="sasDT"
         outState.putString(nameVariableKey, name)
@@ -128,9 +149,11 @@ class TimeToSAS : AppCompatActivity() {
     // получение ранее сохраненного состояния
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
+        /*SAS DATE*/
         nameVariableKey="tvdt1"
         name = savedInstanceState.getString(nameVariableKey)
         tvdt1.text = name
+        /*переменная с SAS DATETIME*/
         nameVariableKey="sasDT"
         name = savedInstanceState.getString(nameVariableKey)
         sasDT= name?.toLong()
@@ -148,6 +171,7 @@ class TimeToSAS : AppCompatActivity() {
             val vs: View = spss.selectedView; (vs as TextView).textSize = 20F
         }
  */
+        /*Если убрать то после добавления функционала заполнения текущего времени при смене ориентации едет верстка*/
         sphh.setSelection(sphh.selectedItemPosition, true)
         spmm.setSelection(spmm.selectedItemPosition, true)
         spss.setSelection(spss.selectedItemPosition, true)
