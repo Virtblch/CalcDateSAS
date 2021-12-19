@@ -1,4 +1,4 @@
-package com.example.calcdatesas
+package com.virtblch.calcdatesas
 
 import android.os.Bundle
 import android.widget.DatePicker
@@ -12,9 +12,6 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import android.widget.AdapterView
 import android.view.View
-
-
-
 
 
 class TimeToSAS : AppCompatActivity() {

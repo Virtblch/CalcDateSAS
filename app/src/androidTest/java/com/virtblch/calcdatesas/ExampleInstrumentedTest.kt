@@ -1,4 +1,4 @@
-package com.example.calcdatesas
+package com.virtblch.calcdatesas
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

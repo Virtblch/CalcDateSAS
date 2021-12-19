@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.calcdatesas",
+  "applicationId": "com.virtblch.calcdatesas",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 18,
-      "versionName": "2.7",
+      "versionCode": 19,
+      "versionName": "2.8",
       "outputFile": "app-release.apk"
     }
   ],

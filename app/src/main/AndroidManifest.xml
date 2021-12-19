@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.calcdatesas">
+    package="com.virtblch.calcdatesas">
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalcDateSAS">
         <activity
-            android:name=".TimeToSAS"
+            android:name="com.virtblch.calcdatesas.TimeToSAS"
             android:exported="false" />
         <activity
-            android:name=".SAStoTime"
+            android:name="com.virtblch.calcdatesas.SAStoTime"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.virtblch.calcdatesas.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
