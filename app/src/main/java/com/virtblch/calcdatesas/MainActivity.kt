@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         val button3:Button=findViewById(R.id.bt3)
         button3.setOnClickListener {
-            intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://v8doc.sas.com/sashtml/lrcon/zenid-63.htm"))
+//            intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://v8doc.sas.com/sashtml/lrcon/zenid-63.htm"))
+            intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/leforinforref/n0c9zxlm4e6m7tn1vrn76c98zw66.htm"))
             startActivity(intent)
         }
     }

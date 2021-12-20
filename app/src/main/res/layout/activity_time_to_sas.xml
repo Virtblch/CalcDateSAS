@@ -17,7 +17,7 @@
 
     <LinearLayout
         android:id="@+id/lldt1"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
@@ -30,15 +30,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/sas_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvdt1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
 
@@ -47,11 +50,10 @@
 
     <LinearLayout
         android:id="@+id/ll1"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="25dp"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/dtp1">
@@ -64,26 +66,37 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="16sp" />
 
-        <Spinner
-            android:id="@+id/sphh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#888888"
-            android:entries="@array/strHH" />
+    </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spmm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#888888"
-            android:entries="@array/strMM" />
+    <LinearLayout
+        android:id="@+id/llspinners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll1">
 
-        <Spinner
-            android:id="@+id/spss"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#888888"
-            android:entries="@array/strSS" />
+    <Spinner
+        android:id="@+id/sphh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#888888"
+        android:entries="@array/strHH" />
+
+    <Spinner
+        android:id="@+id/spmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#888888"
+        android:entries="@array/strMM" />
+
+    <Spinner
+        android:id="@+id/spss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#888888"
+        android:entries="@array/strSS" />
     </LinearLayout>
 
 
@@ -96,7 +109,7 @@
         android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll1">
+        app:layout_constraintTop_toBottomOf="@+id/llspinners">
 
         <View
             android:id="@+id/separator"
@@ -108,7 +121,7 @@
 
     <LinearLayout
         android:id="@+id/lldt2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
@@ -121,15 +134,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/sas_datetime"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
 

@@ -48,9 +48,11 @@ class SAStoTime : AppCompatActivity() {
                     /*Форматирование даты\время */
                     val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss z")
                     val formattedString: String = aDateTime.format(formatter)
-                    /*Если введенная дата SAS в диапазоне из документации:
-                    SAS can perform calculations on dates ranging from A.D. 1582 to A.D. 19,900 */
-                    if (sasDate>=-11928470400 && sasDate<=566131766399) {
+
+                    /*Судя по документации https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/leforinforref/n0c9zxlm4e6m7tn1vrn76c98zw66.htm
+                    Даты SAS корректны с ноября 1582г. по 4000г.*/
+                    /*Если введенная дата SAS в диапазоне с ноября 1582г. по 4000г. */
+                    if (sasDate>=-11902204800 && sasDate<=64376207999) {
                         tv1.text = formattedString.replace("+","")/*Если год >9999 то к году ставится "+", его удаляю*/
                     }
                     else{/*Иначе (если вне диапазона из документации) удаляем последний введенный символ*/
@@ -89,9 +91,10 @@ class SAStoTime : AppCompatActivity() {
                     val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy")
                     val formattedString: String = aDateTime.format(formatter)
 
-                    /*Если введенная дата SAS в диапазоне из документации:
-                    SAS can perform calculations on dates ranging from A.D. 1582 to A.D. 19,900 */
-                    if (sasDate>=-11928470400 && sasDate<=566131766399) {
+                    /*Судя по документации https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/leforinforref/n0c9zxlm4e6m7tn1vrn76c98zw66.htm
+                    Даты SAS корректны с ноября 1582г. по 4000г.*/
+                    /*Если введенная дата SAS в диапазоне с ноября 1582г. по 4000г. */
+                    if (sasDate>=-11902204800 && sasDate<=64376207999) {
                         tvD.text = formattedString.replace("+","")/*Если год >9999 то к году ставится "+", его удаляю*/
                     }
                     else{/*Иначе (если вне диапазона из документации) удаляем последний введенный символ*/

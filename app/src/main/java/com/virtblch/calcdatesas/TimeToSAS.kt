@@ -34,11 +34,13 @@ class TimeToSAS : AppCompatActivity() {
         spmm= findViewById(R.id.spmm)
         spss= findViewById(R.id.spss)
 
-        /*Мин. и макс. значения, доступные в выборе календаря
-        Из документации:
-        SAS can perform calculations on dates ranging from A.D. 1582 to A.D. 19,900 */
-        datePicker.minDate = 864000000L-12244089600000L
-        datePicker.maxDate = 565816147198999L-86400000L
+        val tz = TimeZone.getDefault()
+
+        /*Мин. и макс. значения, доступные в выборе календаря*/
+        /*Судя по документации https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/leforinforref/n0c9zxlm4e6m7tn1vrn76c98zw66.htm
+        Даты SAS корректны с ноября 1582г. по 4000г.*/
+        datePicker.minDate = tz.getOffset(0)-12217824000000L/*UnixTime= 1 November 1582 г., 0:00:00 с поправкой на часовой пояс*/
+        datePicker.maxDate = 64060588799000L-tz.getOffset(0)/*UnixTime= 31 December 3999 г., 23:59:59 с поправкой на часовой пояс*/
 
         /*Все вычисления и вывод в нулевом часовом поясе*/
         val utc0Zone = ZoneId.of("UTC+0")
@@ -120,7 +122,7 @@ class TimeToSAS : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         /*Заполнение текущего времени UTC*/
-        val tz = TimeZone.getDefault()
+
         calendar.time = Date()
         calendar.add(Calendar.MILLISECOND, -(tz.getOffset(calendar.timeInMillis)))/*текущее время - часовой пояс*/
         sphh.setSelection(calendar.get(Calendar.HOUR_OF_DAY), true)

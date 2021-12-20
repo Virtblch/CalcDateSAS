@@ -7,7 +7,7 @@
     tools:context="com.virtblch.calcdatesas.SAStoTime">
 
     <LinearLayout
-        android:id="@+id/llCalcDT"
+        android:id="@+id/lllabelCalcDT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -22,7 +22,19 @@
             android:text="@string/date_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/llCalcDT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lllabelCalcDT"
+        >
         <TextView
             android:id="@+id/tv1"
             android:textAllCaps="true"
@@ -30,8 +42,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp" />
-
     </LinearLayout>
+
 
 
 
@@ -59,6 +71,7 @@
             android:maxLength="12"
             android:textSize="20sp"
             android:backgroundTint="#888888"
+            android:gravity="end"
             app:layout_constraintTop_toTopOf="parent"
             android:autofillHints=""
             tools:ignore="LabelFor" />
@@ -79,15 +92,18 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="@string/date"
+            android:layout_weight="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             />
 
         <TextView
             android:id="@+id/tvD"
             android:textAllCaps="true"
-            android:layout_marginStart="5dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:gravity="end"
             android:textSize="20sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             />
@@ -138,6 +154,7 @@
             android:textSize="20sp"
             android:backgroundTint="#888888"
             android:autofillHints=""
+            android:gravity="end"
             tools:ignore="LabelFor" />
 
     </LinearLayout>
