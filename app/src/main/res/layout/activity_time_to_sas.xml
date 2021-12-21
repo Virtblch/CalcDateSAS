@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:text="@string/sas_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvdt1"
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -137,7 +137,7 @@
             android:layout_weight="1"
             android:text="@string/sas_datetime"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv1"
@@ -147,7 +147,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
