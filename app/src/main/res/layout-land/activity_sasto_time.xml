@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:maxWidth="500dp"
     tools:context="com.virtblch.calcdatesas.SAStoTime">
 
     <LinearLayout
@@ -53,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="190dp"
+            android:minWidth="250dp"
             android:text="@string/enter_sas_datetime"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             style="@style/mTextSize" />
@@ -141,7 +142,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="190dp"
+            android:minWidth="250dp"
             android:text="@string/enter_sas_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             style="@style/mTextSize" />

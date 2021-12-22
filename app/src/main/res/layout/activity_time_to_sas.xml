@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:text="@string/sas_date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="16sp" />
+            style="@style/mTextSize" />
 
         <TextView
             android:id="@+id/tvdt1"
@@ -43,10 +43,9 @@
             android:layout_weight="1"
             android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="16sp" />
+            style="@style/mTextSize" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/ll1"
@@ -64,7 +63,7 @@
             android:layout_height="24dp"
             android:text="@string/enter_time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="16sp" />
+            style="@style/mTextSize" />
 
     </LinearLayout>
 
@@ -81,24 +80,23 @@
         android:id="@+id/sphh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#888888"
+        style="@style/mColorBackgroundTint"
         android:entries="@array/strHH" />
 
     <Spinner
         android:id="@+id/spmm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#888888"
+        style="@style/mColorBackgroundTint"
         android:entries="@array/strMM" />
 
     <Spinner
         android:id="@+id/spss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#888888"
+        style="@style/mColorBackgroundTint"
         android:entries="@array/strSS" />
     </LinearLayout>
-
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/sep"
@@ -115,7 +113,7 @@
             android:id="@+id/separator"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="#103C5E" />
+            style="@style/mColorBackground" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -137,7 +135,7 @@
             android:layout_weight="1"
             android:text="@string/sas_datetime"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="16sp" />
+            style="@style/mTextSize" />
 
         <TextView
             android:id="@+id/tv1"
@@ -147,7 +145,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="16sp" />
+            style="@style/mTextSize" />
 
     </LinearLayout>
 
@@ -166,9 +164,7 @@
             android:id="@+id/separator2"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="#103C5E" />
+            style="@style/mColorBackground" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

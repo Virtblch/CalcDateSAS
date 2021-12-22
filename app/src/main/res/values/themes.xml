@@ -33,4 +33,17 @@
         <item name="strokeColor">#959494</item>
         <item name="strokeWidth">2dp</item>
     </style>
+    <style name="mTextSize">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="mColorBackground">
+        <item name="android:background">#103C5E</item>
+    </style>
+    <style name="mColorBackgroundTint">
+        <item name="android:backgroundTint">#888888</item>
+    </style>
+    <style name="mEditText">
+        <item name="android:backgroundTint">#888888</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
