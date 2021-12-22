@@ -46,7 +46,7 @@ class SAStoTime : AppCompatActivity() {
                     val aDateTime: ZonedDateTime = ZonedDateTime.ofInstant(i, utc0Zone)
 
                     /*Форматирование даты\время */
-                    val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss z")
+                    val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm:ss")
                     val formattedString: String = aDateTime.format(formatter)
 
                     /*Судя по документации https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/leforinforref/n0c9zxlm4e6m7tn1vrn76c98zw66.htm

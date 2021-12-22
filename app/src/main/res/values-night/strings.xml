@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="date_time"><![CDATA["Date&Time: "]]></string>
+    <string name="date_time"><![CDATA["Date&Time UTC: "]]></string>
     <string name="enter_sas_datetime">Enter SAS DateTime:</string>
     <string name="date">Date:</string>
     <string name="enter_sas_date">Enter SAS Date:</string>
