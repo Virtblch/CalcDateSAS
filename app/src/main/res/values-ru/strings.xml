@@ -10,6 +10,7 @@
     <string name="sas_datetime_date_time"><![CDATA[SAS DateTime —> Дата/Время]]></string>
     <string name="date_time_sas_datetime"><![CDATA[Дата/Время —> SAS DateTime]]></string>
     <string name="about_sas_date">О SAS Date…</string>
+    <string name="copy">Скопировано:</string>
     <string-array name="strHH">
         <item>00ч</item>
         <item>01ч</item>

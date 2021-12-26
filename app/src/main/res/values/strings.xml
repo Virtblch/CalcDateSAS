@@ -10,6 +10,7 @@
     <string name="sas_datetime_date_time"><![CDATA[SAS DateTime —> Date/Time]]></string>
     <string name="date_time_sas_datetime"><![CDATA[Date/Time —> SAS DateTime]]></string>
     <string name="about_sas_date">About SAS Date…</string>
+    <string name="copy">Copy:</string>
     <string-array name="strHH">
         <item>00h</item>
         <item>01h</item>

@@ -1,17 +1,17 @@
 package com.virtblch.calcdatesas
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.os.Bundle
-import android.widget.DatePicker
-import android.widget.Spinner
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.temporal.ChronoUnit
 import java.util.*
 import java.util.concurrent.TimeUnit
-import android.widget.AdapterView
 import android.view.View
+import android.widget.*
+import androidx.core.content.ContextCompat
 
 
 class TimeToSAS : AppCompatActivity() {
@@ -128,6 +128,28 @@ class TimeToSAS : AppCompatActivity() {
         sphh.setSelection(calendar.get(Calendar.HOUR_OF_DAY), true)
         spmm.setSelection(calendar.get(Calendar.MINUTE), true)
         spss.setSelection(calendar.get(Calendar.SECOND), true)
+
+        //Копирование SAS DateTime в буфер по клику
+        tv1.setOnClickListener(){
+            if (tv1.text.isNotEmpty()) {
+                val clipboard = ContextCompat.getSystemService(this, ClipboardManager::class.java)
+                clipboard?.setPrimaryClip(ClipData.newPlainText("", tv1.text))
+                Toast.makeText(this, resources.getString(R.string.copy)+ " " + tv1.text,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        //Копирование SAS Date в буфер по клику
+        tvdt1.setOnClickListener(){
+            if (tvdt1.text.isNotEmpty()) {
+                val clipboard = ContextCompat.getSystemService(this, ClipboardManager::class.java)
+                clipboard?.setPrimaryClip(ClipData.newPlainText("", tvdt1.text))
+                Toast.makeText(this, resources.getString(R.string.copy)+ " " + tvdt1.text,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
 
     }
 

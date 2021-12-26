@@ -1,11 +1,16 @@
 package com.virtblch.calcdatesas
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import androidx.core.content.ContextCompat
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -109,5 +114,22 @@ class SAStoTime : AppCompatActivity() {
             }
         })
 
+        //Копирование в буфер по клику даты+время
+        tv1.setOnClickListener(){
+            if (tv1.text.isNotEmpty()) {
+                val clipboard = ContextCompat.getSystemService(this, ClipboardManager::class.java)
+                clipboard?.setPrimaryClip(ClipData.newPlainText("", (""+tv1.text).uppercase()))
+                Toast.makeText(this, resources.getString(R.string.copy)+ (" " + tv1.text).uppercase(), LENGTH_SHORT).show()
+            }
+        }
+
+        //Копирование даты в буфер по клику
+        tvD.setOnClickListener(){
+            if (tvD.text.isNotEmpty()) {
+                val clipboard = ContextCompat.getSystemService(this, ClipboardManager::class.java)
+                clipboard?.setPrimaryClip(ClipData.newPlainText("", (""+tvD.text).uppercase()))
+                Toast.makeText(this, resources.getString(R.string.copy)+ (" " + tvD.text).uppercase(), LENGTH_SHORT).show()
+            }
+        }
     }
 }
