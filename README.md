@@ -7,6 +7,4 @@ About SAS Date: https://v8doc.sas.com/sashtml/lrcon/zenid-63.htm
 Google Play:<br>
 https://play.google.com/store/apps/details?id=com.virtblch.calcdatesas
 
-![Alt text](screen1_sasDateCalc.jpg?raw=true "screenshot 1")
-![Alt text](screen2_sasDateCalc.jpg?raw=true "screenshot 2")
-![Alt text](screen3_sasDateCalc.jpg?raw=true "screenshot 3")
+![Alt text](screen_sasDateCalc.jpg?raw=true "screenshot")
